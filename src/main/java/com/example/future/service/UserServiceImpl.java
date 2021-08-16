@@ -21,6 +21,8 @@ public class UserServiceImpl implements UserService {
 
         logger.info("service saveUser method begin.");
 
+        //userRepository.save(user);
+
         CompletableFuture<Void> saveUserFuture = CompletableFuture.runAsync(() -> {
             try {
                 Thread.sleep(3000L);
@@ -29,6 +31,9 @@ public class UserServiceImpl implements UserService {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        // thenRun => callback function
+        }).thenRun(() -> {
+            System.out.println("then run");
         });
 
         logger.info("service saveUser method end.");
