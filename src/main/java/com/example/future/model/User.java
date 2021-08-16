@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "users")
@@ -20,4 +21,11 @@ public class User {
     private int id;
     private String name;
     private String lastName;
+    @Column(nullable = true)
+    private int salary;
+    private Date createdAt;
+    @ManyToOne
+    @JoinColumn(name = "todo_id")
+    private Todo todo;
+
 }
