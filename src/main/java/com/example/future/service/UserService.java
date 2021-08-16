@@ -8,5 +8,4 @@ import java.util.List;
 public interface UserService {
 
     String saveUser(User user);
-    List<User> filterUsers(List<FilterRequest> filterRequests, String filterType);
 }

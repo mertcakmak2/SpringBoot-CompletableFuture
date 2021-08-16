@@ -1,6 +1,5 @@
 package com.example.future.controller;
 
-import com.example.future.filter.FilterRequest;
 import com.example.future.model.User;
 import com.example.future.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +19,4 @@ public class UserController {
         return userService.saveUser(user);
     }
 
-    @PostMapping("/filter")
-    private List<User> filterUsers(@RequestBody List<FilterRequest> filterRequests, @RequestParam String filterType){
-        return userService.filterUsers(filterRequests, filterType);
-    }
 }
